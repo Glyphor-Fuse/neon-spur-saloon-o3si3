@@ -7,7 +7,7 @@ import { Calendar } from "@/components/ui/calendar";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { format } from "date-fns";
 import { Sparkles, Star } from 'lucide-react';
-import { useState } from 'react';
+import { useState, FormEvent } from 'react';
 import { cn } from "@/lib/utils";
 import { toast } from "sonner";
 
@@ -15,7 +15,7 @@ export function BookingModal({ triggerLabel = "Book VIP Now", className }: { tri
   const [date, setDate] = useState<Date>();
   const [open, setOpen] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
     setOpen(false);
     toast.success("VIP Request Sent!", {
@@ -83,7 +83,7 @@ export function BookingModal({ triggerLabel = "Book VIP Now", className }: { tri
             </Popover>
           </div>
           <Button type="submit" className="w-full mt-4 bg-accent text-accent-foreground hover:bg-accent/90 font-bold">
-            <SparklesCore className="mr-2 h-4 w-4" /> Confirm Request
+            <Sparkles className="mr-2 h-4 w-4" /> Confirm Request
           </Button>
         </form>
       </DialogContent>

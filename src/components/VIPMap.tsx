@@ -4,7 +4,7 @@ import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip
 import { MapPin, Users, Info } from "lucide-react";
 
 export function VIPMap() {
-  const [hoveredZone, setHoveredZone] = React.useState<string | null>(null);
+  const [hoveredZone, setHoveredZone] = useState<string | null>(null);
 
   const zones = [
     {
